@@ -25,12 +25,12 @@ function game(){
          seconds = 60;
          break;
       case 3:
-         seconds = 5
+         seconds = 30
          break;
    }
    document.getElementById("seconds").innerHTML= seconds;
 
-   var balloons_number = 2;
+   var balloons_number = 90;
    balloons_generator(balloons_number);
    document.getElementById("full").innerHTML = balloons_number;
    document.getElementById("broken").innerHTML = 0;

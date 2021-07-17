@@ -1,0 +1,92 @@
+@font-face {
+    font-family: brightly; 
+    src: url("./font/BrightlyCrushShine.otf");
+}
+
+ *{
+    font-family: brightly;
+}
+
+
+.content{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 15px;
+    text-align: center;
+}
+
+.content img{
+    margin-left: 20px;
+}
+
+.game-menu-content  {
+    height: 500px;
+    margin-top: 5px;
+    border: solid 3px rgb(124, 124, 124);
+}
+
+.game-menu-content *{
+    margin: auto;
+    padding-bottom: 5px;
+}
+
+.balloons{
+    display: flex;
+
+}
+
+#full{
+    margin-top: 45px;
+}
+
+#broken{
+    margin-top:45px ;
+}
+
+#timer{
+    width: 105px;
+    height: 110px;
+    background-image:url("./img/Timer.png");
+    background-size: 100px;
+    margin-left: 17px;
+}
+
+#seconds {
+    text-align: center;
+    padding-top: 50px;
+    padding-right: 10px;
+}
+
+
+.game-background {
+    width: 850px;
+    height: 500px;
+    background-image: url(./img/background.jpg);
+    background-size: 850px 500px;
+    background-repeat: no-repeat; 
+    top: -25px;
+    text-align: center;
+    left: 5px;
+    margin-top: 30px;
+}
+
+
+#background{
+    width: 850px;
+    height: 500px;
+    text-align: center;
+   margin-left: -15px;
+
+}
+
+
+#alert_gamestatus{
+    width: 850px;
+    left: -15px;
+   
+}
+
+
+
+

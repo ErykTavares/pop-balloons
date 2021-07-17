@@ -25,12 +25,12 @@ function game(){
          seconds = 60;
          break;
       case 3:
-         seconds = 30
+         seconds = 5
          break;
    }
    document.getElementById("seconds").innerHTML= seconds;
 
-   var balloons_number = 90;
+   var balloons_number = 2;
    balloons_generator(balloons_number);
    document.getElementById("full").innerHTML = balloons_number;
    document.getElementById("broken").innerHTML = 0;
@@ -47,9 +47,11 @@ function balloons_generator(balloons_number){
       balloons.class = "balloons_small"
       balloons.style.width ="55px";
       balloons.style.justifyItems = "center";
+      balloons.setAttribute("class", "balloons_game")
       document.getElementById("background").appendChild(balloons);
       balloons.onclick = function(){pop(this)};
       balloons.id = "b" + i;
+      
       
 
    }
@@ -60,7 +62,7 @@ let time;
 function  timer(seconds){
    if( seconds == -1){
       clearTimeout(time);
-      status_game(null, seconds);
+      status_game(null, seconds, null);
       return false
    }
    
@@ -88,7 +90,7 @@ function points(){
 
    document.getElementById("full").innerHTML = balloons_full;
    document.getElementById("broken").innerHTML = balloons_pop;
-   status_game(balloons_full)
+   status_game(balloons_full, null)
 }
 
 
@@ -98,12 +100,19 @@ function status_game(balloons_full, seconds){
    if( balloons_full == 0){
       alert_game.setAttribute("class", "alert alert-success");
       status_text.innerHTML = "You Win";
+      clearTimeout(time);
 
    }
 
    if(seconds == -1){
+      let balloons_game = document.getElementsByClassName("balloons_game").length;
       alert_game.setAttribute("class", "alert alert-danger");
       status_text.innerHTML = "Game Over";
+      for(let i = 0; i <= balloons_game;){
+        let balloons_id = "b"+ balloons_game;
+        document.getElementById(balloons_id).setAttribute("onclick", "")
+         balloons_game = balloons_game - 1;
+      }
    }
 }
 
